@@ -11,12 +11,31 @@ namespace Gold
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        /// 
+
+        static void close_program(Object sender, FormClosedEventArgs e)
+        {
+            if(Application.OpenForms.Count == 0)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                Application.OpenForms[0].FormClosed += new FormClosedEventHandler(close_program);
+            }
+        }
+
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            Login login = new Login();
+            login.FormClosed += new FormClosedEventHandler(close_program);
+            login.Show();
+
+            Application.Run();
         }
     }
 }
