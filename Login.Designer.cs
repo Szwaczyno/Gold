@@ -47,13 +47,14 @@
             this.login_button.TabIndex = 0;
             this.login_button.Text = "Login";
             this.login_button.UseVisualStyleBackColor = false;
+            this.login_button.Click += new System.EventHandler(this.login_button_Click);
             // 
             // exit_button
             // 
             this.exit_button.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.exit_button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.exit_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exit_button.Location = new System.Drawing.Point(373, 322);
+            this.exit_button.Location = new System.Drawing.Point(224, 322);
             this.exit_button.Name = "exit_button";
             this.exit_button.Size = new System.Drawing.Size(161, 47);
             this.exit_button.TabIndex = 1;
@@ -65,7 +66,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(163, 74);
+            this.label1.Location = new System.Drawing.Point(100, 79);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 24);
             this.label1.TabIndex = 2;
@@ -75,7 +76,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(163, 136);
+            this.label2.Location = new System.Drawing.Point(100, 141);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 24);
             this.label2.TabIndex = 3;
@@ -83,14 +84,14 @@
             // 
             // login_user
             // 
-            this.login_user.Location = new System.Drawing.Point(167, 101);
+            this.login_user.Location = new System.Drawing.Point(104, 106);
             this.login_user.Name = "login_user";
             this.login_user.Size = new System.Drawing.Size(196, 20);
             this.login_user.TabIndex = 4;
             // 
             // user_password
             // 
-            this.user_password.Location = new System.Drawing.Point(167, 163);
+            this.user_password.Location = new System.Drawing.Point(104, 168);
             this.user_password.Name = "user_password";
             this.user_password.PasswordChar = '❤';
             this.user_password.Size = new System.Drawing.Size(196, 20);
@@ -100,7 +101,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(546, 381);
+            this.ClientSize = new System.Drawing.Size(397, 379);
             this.Controls.Add(this.user_password);
             this.Controls.Add(this.login_user);
             this.Controls.Add(this.label2);

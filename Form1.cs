@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace Gold
 {
-    public partial class Form1 : Form
+    public partial class Main : Form
     {
-        public Form1()
+        public Main(int id_user)
         {
             InitializeComponent();
+            int id_user_login = id_user;
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -2,9 +2,11 @@ c:\users\michal\documents\visual studio 2015\Projects\Gold\Gold\bin\Debug\Gold.e
 C:\Users\Michal\documents\visual studio 2015\Projects\Gold\Gold\bin\Debug\Gold.exe
 C:\Users\Michal\documents\visual studio 2015\Projects\Gold\Gold\bin\Debug\Gold.pdb
 C:\Users\Michal\documents\visual studio 2015\Projects\Gold\Gold\obj\Debug\Gold.csprojResolveAssemblyReference.cache
-C:\Users\Michal\documents\visual studio 2015\Projects\Gold\Gold\obj\Debug\Gold.Form1.resources
 C:\Users\Michal\documents\visual studio 2015\Projects\Gold\Gold\obj\Debug\Gold.Properties.Resources.resources
 C:\Users\Michal\documents\visual studio 2015\Projects\Gold\Gold\obj\Debug\Gold.csproj.GenerateResource.Cache
 C:\Users\Michal\documents\visual studio 2015\Projects\Gold\Gold\obj\Debug\Gold.exe
 C:\Users\Michal\documents\visual studio 2015\Projects\Gold\Gold\obj\Debug\Gold.pdb
 C:\Users\Michal\documents\visual studio 2015\Projects\Gold\Gold\obj\Debug\Gold.Login.resources
+C:\Users\Michal\documents\visual studio 2015\Projects\Gold\Gold\bin\Debug\MySql.Data.dll
+C:\Users\Michal\documents\visual studio 2015\Projects\Gold\Gold\bin\Debug\MySql.Data.xml
+C:\Users\Michal\documents\visual studio 2015\Projects\Gold\Gold\obj\Debug\Gold.Main.resources
