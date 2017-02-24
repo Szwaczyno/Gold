@@ -25,13 +25,15 @@ namespace Gold
             
         }
 
-        // Przycisk restartujacy zmiana hasla
+        // -SETTINGS- Przycisk restartujacy pola tekstowe
         private void btReset_Click(object sender, EventArgs e)
         {
             oldPassword.Text = "";
             newPassword.Text = "";
             repeatNewPassword.Text = "";
             btChange.Enabled = false;
+            txtNewLogin.Text = "";
+            txtNewLogin_Password.Text = "";
         }
 
         //Przycisk wprowadzajacy zmiany zmiana hasla
@@ -54,7 +56,7 @@ namespace Gold
             check_draw(sender, e);
         }
 
-        //Formularz stare haslo
+        // -SETINGS- Ustawianie przyciskow w tryb enebled 
         private void check_draw(object sender, EventArgs e)
         {
             if (oldPassword.Text != "" && newPassword.Text != "" &&
@@ -63,11 +65,50 @@ namespace Gold
                 bt_changePassword.Enabled = true;
             }
             else bt_changePassword.Enabled = false;
+            if (txtNewLogin_Password.Text != "" && txtNewLogin.Text != "")
+            {
+                btChangeLogin.Enabled = true;
+            }
+            else btChangeLogin.Enabled = false;
         }
+
+
+
+        private void btChangeLogin_Click(object sender, EventArgs e)
+        {
+            ConnectDB db = new ConnectDB();
+            db.initialize();
+            db.sendUpdate("UPDATE user SET login = '"+txtNewLogin.Text+"' WHERE idUser = '"+id_user_login+"' AND password = PASSWORD('"+txtNewLogin_Password.Text+"');");
+
+            if(db.query_good)
+            {
+                MessageBox.Show("Zaktualizowano login. Nowy login: "+ txtNewLogin.Text);
+            }
+            else
+            {
+                MessageBox.Show("Nie zaktualizowano loginu. Błędne hasło");
+            }
+            btReset_Click(sender, e);
+            check_draw(sender, e);
+        }
+
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+        private void tab_password_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bt_LOGOUT_Click(object sender, EventArgs e)
+        {
+            this.id_user_login = 0;
+
+            Login login = new Login();
+            login.Show();
+            this.Close();
         }
     }
 }
