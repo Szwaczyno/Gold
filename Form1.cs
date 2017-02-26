@@ -110,5 +110,23 @@ namespace Gold
             login.Show();
             this.Close();
         }
+
+        //Group box search person
+        private void btResetSearchWorker_Click(object sender, EventArgs e)
+        {
+            txtSurnameWorker.Text = "";
+        }
+        private void txtSurnameWorker_TextChanged(object sender, EventArgs e)
+        {
+            if (txtSurnameWorker.Text != "") btSearchWorker.Enabled = true;
+            else btSearchWorker.Enabled = false;
+        }
+        private void btSearchWorker_Click(object sender, EventArgs e)
+        {
+            ConnectDB db = new ConnectDB();
+            db.initialize();
+            BindingSource source = db.sendQueryReciveTable("SELECT imie AS Imie,nazwisko AS Nazwisko,login AS Login,pracownik AS Pracownik FROM user WHERE CONCAT(nazwisko,' ',imie) LIKE '%" + txtSurnameWorker.Text + "%' ORDER BY nazwisko;");
+            girdUsers.DataSource = source;
+        }
     }
 }

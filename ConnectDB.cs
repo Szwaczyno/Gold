@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
+using System.Data;
 
 namespace Gold
 {
@@ -13,6 +10,10 @@ namespace Gold
         string config;
         MySqlConnection connect;
         MySqlCommand command;
+
+        MySqlDataAdapter dataAdapter;
+        BindingSource source;
+
         public MySqlDataReader response;
         public bool query_good;
 
@@ -50,7 +51,7 @@ namespace Gold
                 response = command.ExecuteReader();
                 if(response.Read())
                 {
-                    // --------------------------------- TODO !!!
+                    query_good = true;
                 }
             }catch(Exception e)
             {
@@ -59,10 +60,38 @@ namespace Gold
             connect.Close();
         }
 
+        public BindingSource sendQueryReciveTable(string a_querry)
+        {
+
+            this.startConnect(a_querry);
+            command = new MySqlCommand(a_querry, connect);
+            dataAdapter = new MySqlDataAdapter();
+
+            dataAdapter.SelectCommand = command;
+            DataTable dataTable = new DataTable();
+            dataAdapter.Fill(dataTable);
+
+            source = new BindingSource();
+
+            source.DataSource = dataTable;
+
+            try
+            {
+
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("Błąd połączenia z bazą danych "+e);
+            }
+            return source;
+            connect.Close();
+        }
+
         private void startConnect(string a_querry)
         {
             query_good = false;
             connect.Open();
         }
+
     }
 }
